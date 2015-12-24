@@ -1,0 +1,25 @@
+{
+  "name": "express-login",
+  "version": "1.0.0",
+  "description": "Social logins using passport.js",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chawlaaditya8/express-login.git"
+  },
+  "author": "Aditya Chawla",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chawlaaditya8/express-login/issues"
+  },
+  "homepage": "https://github.com/chawlaaditya8/express-login#readme",
+  "dependencies": {
+    "body-parser": "^1.14.2",
+    "express": "^4.13.3",
+    "jade": "^1.11.0",
+    "path": "^0.12.7"
+  }
+}
