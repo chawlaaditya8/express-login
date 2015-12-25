@@ -1,6 +1,19 @@
+extends ./structure/layout.jade
 
-html
-  head
-    title!= title
-  body
-    h1!= message
+block content
+  include structure/navbar.jade
+
+  if !user
+    div.container
+      h1 Welcome
+      p
+        | Please
+        a(href='/login')  log in
+        | .
+  else
+    div.container
+      h1 Hello, #{ user.username }!
+      p
+        | View your
+        a(href='/profile')  profile
+        | .

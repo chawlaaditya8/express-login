@@ -1,12 +1,27 @@
-p
-  | ID: #{ user.id }
-  br
-  | Username: #{ user.username }
-  br
-  | Name: #{ user.displayName }
-  br
+extends structure/layout.jade
 
-  if user.emails
-    | Email: #{ user.emails[0].value }
-    br
-    a(href='/logout') Log out
+block content
+  include structure/navbar.jade
+  .container
+    .row
+      .col-md-4
+        | ID
+      .col-md-4
+        | #{ user.id }
+    .row
+      .col-md-4
+        | Username
+      .col-md-4
+        | #{ user.username }
+    .row
+      .col-md-4
+        | Name
+      .col-md-4
+        | #{ user.displayName }
+    if user.emails
+      .row
+        .col-md-4
+          | Email
+        .col-md-4
+          | #{ user.emails[0].value }
+      a(href='/logout') Log out
