@@ -1,2 +1,2 @@
 # express-login
-Social logins using passport.js
+Social login using passport.js
