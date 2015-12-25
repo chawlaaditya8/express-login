@@ -18,8 +18,15 @@
   "homepage": "https://github.com/chawlaaditya8/express-login#readme",
   "dependencies": {
     "body-parser": "^1.14.2",
+    "connect-ensure-login": "^0.1.1",
+    "cookie-parser": "^1.4.0",
     "express": "^4.13.3",
+    "express-session": "^1.12.1",
     "jade": "^1.11.0",
+    "morgan": "^1.6.1",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "passport-login": "0.0.0",
     "path": "^0.12.7"
   }
 }
