@@ -2,6 +2,7 @@
 var express = require('express');
 var passport = require('passport');
 var Strategy = require('passport-local').Strategy;
+
 var db = require('./db');
 
 
@@ -47,7 +48,7 @@ passport.deserializeUser(function(id, cb) {
 var app = express();
 
 // Configure view engine to render jade templates.
-app.set('views', __dirname + '/views');
+app.set('views', __dirname + '/public/views');
 app.set('view engine', 'jade');
 
 // Use application-level middleware for common functionality, including
@@ -62,35 +63,10 @@ app.use(require('express-session')({ secret: 'keyboard cat', resave: false, save
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use(express.static('public'));
+app.use(express.static(__dirname + '/public'));
+
 // Define routes.
-app.get('/',
-  function(req, res) {
-    res.render('index', { user: req.user });
-  });
-
-app.get('/login',
-  function(req, res){
-    res.render('login');
-  });
-
-app.post('/login',
-  passport.authenticate('local', { failureRedirect: '/login' }),
-  function(req, res) {
-    res.redirect('/');
-  });
-
-app.get('/logout',
-  function(req, res){
-    req.logout();
-    res.redirect('/');
-  });
-
-app.get('/profile',
-  require('connect-ensure-login').ensureLoggedIn(),
-  function(req, res){
-    res.render('profile', { user: req.user });
-  });
+require('./app/routes.js')(app);
 
 app.listen(3000);
 console.log('App is running on port 3000');
