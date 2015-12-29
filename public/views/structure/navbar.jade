@@ -11,16 +11,15 @@ nav.navbar.navbar-default
       ul.nav.navbar-nav
         li.active
           a(href='#') Home
-        li.dropdown
-          a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
+        li.cursor(uib-dropdown='', is-open='status.isopen')
+          a.dropdown-toggle(uib-dropdown-toggle='')
             | Dropdown
             span.caret
-          ul.dropdown-menu
-            li
+          ul.uib-dropdown-menu(role='menu', aria-labelledby='single-button')
+            li(role='menuitem')
               a(href='#') Action
-            li.divider(role='separator')
-            li.dropdown-header Nav header
-            li
+            li.divider
+            li(role='menuitem')
               a(href='#') Separated link
       ul.nav.navbar-nav.navbar-right
         li

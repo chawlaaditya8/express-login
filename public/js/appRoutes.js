@@ -1,17 +1,19 @@
-angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+angular.module('app', []).config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
 
     $routeProvider
 
-        .when('/', {
-            templateUrl: 'views/index.jade'
+        when('/', {
+            templateUrl: 'partials/a.jade'
         })
-        .when('/login', {
-            templateUrl: 'views/login.jade'
+        when('/login', {
+            templateUrl: 'partials/a.jade'
+            // templateUrl: 'views/login.jade'
         });
-        .when('/profile', {
-            templateUrl: 'views/profile.jade'
+        when('/profile', {
+            templateUrl: 'partials/a.jade'
+            // templateUrl: 'views/profile.jade'
         });
-        .when('/logout', {
+        otherwise('/logout', {
             redirectTo: "/"
         });
 
